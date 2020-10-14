@@ -11,8 +11,8 @@ Github Actions使用方法见[@lxk0301](https://raw.githubusercontent.com/lxk030
 let s = 30000 //等待延迟30s
 const $ = new Env("中青看点")
 //const notify = $.isNode() ? require('./sendNotify') : '';
-let ReadArr = [], articlebody ='';
-let YOUTH_READ = [ '','',];
+let ReadArr = [], YouthBody ="";
+
   if (process.env.YOUTH_READ && process.env.YOUTH_READ.split('&') && process.env.YOUTH_READ.split('&').length > 0) {
   YouthBody = process.env.YOUTH_READ.split('&');
   }
@@ -24,7 +24,6 @@ let YOUTH_READ = [ '','',];
           ReadArr.push(YouthBody[item])
         }
     })
-      console.log(`\n============ 脚本执行来自 Github Action  ==============\n`)
       console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
       console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
  !(async () => {
